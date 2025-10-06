@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //routes
 app.use('/',require(path.join(__dirname,'routers','categoryRouter')));
+app.use('/authors',require(path.join(__dirname,'routers','authorRouter')));
 //------------------
 app.use('/{*splat}', async (req, res) => {
    // *splat matches any path without the root path. If you need to match the root path as well /, you can use /{*splat}, wrapping the wildcard in braces.

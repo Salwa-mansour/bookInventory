@@ -22,8 +22,8 @@ function categoryCreateGet(req, res) {
 async function createNewCategory(req, res){
 
 
-    const { categoryname } = req.body;
-  await db.insertCategory(categoryname);
+    const { categoryName } = req.body;
+  await db.insertCategory(categoryName);
   res.redirect("/");
 };
 

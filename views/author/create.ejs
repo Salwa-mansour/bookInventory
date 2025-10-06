@@ -8,12 +8,12 @@
 </head>
 <body>
        <h1><%= locals.title %></h1>
-            <%- include('../partials/nav.ejs') %>
+             <%- include('../partials/nav.ejs') %>
 
-     <form action="create" method="POST">
+     <form action="/authors/create" method="POST">
         <div>
-            <label for="categoryName"></label>
-            <input type="text" id="categoryName" name="categoryName" placeholder="category name">
+            <label for="authorName"></label>
+            <input type="text" id="authorName" name="authorName" placeholder="author name">
         </div>
          <button type="submit">Submit</button>
        </form>

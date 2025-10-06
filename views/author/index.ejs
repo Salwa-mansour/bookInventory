@@ -8,18 +8,18 @@
 </head>
 <body>
       <h1><%= locals.title %></h1>
-         <%- include('../partials/nav.ejs') %>
+      <%- include('../partials/nav.ejs') %>
 
   <ul>
-    <% if (locals.categories) {%>
-      <% categories.forEach(category => { %>
+    <% if (locals.authors) {%>
+      <% authors.forEach(author => { %>
         <li>
-         Name: <%= category.categoryname %>
+         Name: <%= author.authorname %>
         </li>
       <% }); %>
     <% } %>
   </ul>
-    <a href="/create">new</a>
+    <a href="/authors/create">new</a>
 
 </body>
 </html>

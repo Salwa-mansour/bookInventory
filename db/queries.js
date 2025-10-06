@@ -1,5 +1,17 @@
 const pool = require('./pool');
+// author
+async function  getAllAuthors() {
+    const {rows} = await pool.query("SELECT * FROM bookAuthor");
 
+    return rows;
+}
+
+
+async function insertAuthor(Author) {
+    await pool.query("INSERT INTO bookAuthor (authorName) VALUES ($1)",[Author]);
+}
+
+// category
 async function  getAllCategories() {
     const {rows} = await pool.query("SELECT * FROM bookCategory");
 
@@ -14,5 +26,7 @@ async function insertCategory(Category) {
 
 module.exports = {
     getAllCategories,
-    insertCategory
+    insertCategory,
+    getAllAuthors,
+    insertAuthor
 };
