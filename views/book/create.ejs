@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+       <h1><%= locals.title %></h1>
+             <%- include('../partials/nav.ejs') %>
+
+     <form action="/books/create" method="POST">
+        <div>
+            <label for="bookName"></label>
+            <input type="text" id="bookName" name="bookName" placeholder="book name">
+           <label for="author">author</label>
+            <select name="author" id="author">
+                 <% if (locals.authors) {%>
+                    <% authors.forEach(author => { %>
+                    <option value="<%= author.id %>"><%= author.authorname %></option>
+                    <% }); %>
+                  <% } %>
+            </select>
+            <label for="categor">category</label>
+            <select name="category" id="category">
+                  <% if (locals.categories) {%>
+                    <% categories.forEach(category => { %>
+                    <option value="<%= category.id %>"><%= category.categoryname %></option>
+                    <% }); %>
+                  <% } %>
+            </select>
+        </div>
+         <button type="submit">Submit</button>
+       </form>
+</body>
+</html>

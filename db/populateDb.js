@@ -2,7 +2,7 @@ const dotenv =require('dotenv');
 const { Client } = require("pg");
 
 dotenv.config({ path: 'config.env' });
-
+// add item count and birthdate
 const SQL = `
 CREATE TABLE IF NOT EXISTS  bookCategory (
 id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
