@@ -5,7 +5,7 @@ const db = require("../db/queries");
 async function getAllAuthors(req, res){
 
   const bookAuthors = await db.getAllAuthors();
- console.log(bookAuthors)
+
 
   res.render("author/index", {
     title: "Authors list",

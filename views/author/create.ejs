@@ -13,9 +13,16 @@
      <form action="/authors/create" method="POST">
         <div>
             <label for="authorName"></label>
-            <input type="text" id="authorName" name="authorName" placeholder="author name">
+            <input type="text" id="authorName" name="authorName" placeholder="author name" value="<%= locals.authorName %>">
         </div>
          <button type="submit">Submit</button>
        </form>
+       <% if (locals.errors) { %>
+  <ul>
+    <% locals.errors.forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }); %>
+  </ul>
+<% } %>
 </body>
 </html>
